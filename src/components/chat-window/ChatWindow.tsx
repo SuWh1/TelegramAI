@@ -43,6 +43,7 @@ export function ChatWindow({ chatId }: { chatId?: string }) {
   const [input, setInput] = useState("");
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const { theme, toggleTheme } = useTheme();
+  const [inputDisabled, setInputDisabled] = useState(false);
 
   const [isBotTyping, setIsBotTyping] = useState(false);
 
@@ -66,7 +67,8 @@ export function ChatWindow({ chatId }: { chatId?: string }) {
   const messages = chatId ? chatHistory[chatId] || [] : [];
 
   const sendMessage = async () => {
-    if (!input.trim() || !chatId) return;
+    if (!input.trim() || !chatId || inputDisabled) return;
+    setInputDisabled(true);
 
     const userMsg: Message = {
       id: Date.now(),
