@@ -1,4 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+# TelegramAI
+=======
+>>>>>>> 208c37b (corrected)
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -53,6 +58,10 @@ export default tseslint.config({
   },
 });
 ```
+<<<<<<< HEAD
 =======
 # TelegramAI
 >>>>>>> 466cfce (Initial commit)
+=======
+>>>>>>> d6ad14a (initial commit)
+>>>>>>> 208c37b (corrected)

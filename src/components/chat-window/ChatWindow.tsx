@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { sendMessageToGemini } from "../../api/openai";
 import { useTheme } from "../../context/ThemeContext";
-import { useNavigate } from 'react-router-dom';
 
 interface Message {
   id: number;
@@ -44,7 +43,7 @@ export function ChatWindow({ chatId }: { chatId?: string }) {
   const [input, setInput] = useState("");
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const { theme, toggleTheme } = useTheme();
-  const navigate = useNavigate();
+
   const [isBotTyping, setIsBotTyping] = useState(false);
 
   // Получаем meta для текущего чата
