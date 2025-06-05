@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { sendMessageToGemini } from "../../api/openai";
 import { useTheme } from "../../context/ThemeContext";
+import ReactMarkdown from 'react-markdown';
 
 interface Message {
   id: number;
@@ -181,7 +182,10 @@ export function ChatWindow({ chatId }: { chatId?: string }) {
                   : theme === 'dark' ? 'bg-[#22232B] text-gray-200' : 'bg-white'
               }`}
             >
-              <div>{msg.text}</div>
+              {msg.sender === "bot"
+                ? <ReactMarkdown>{msg.text}</ReactMarkdown>
+                : <div>{msg.text}</div>
+              }
               <div className={`text-xs text-right mt-1 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-400'}`}>{msg.timestamp}</div>
             </div>
             {msg.sender === "user" && (
