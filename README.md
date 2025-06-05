@@ -1,6 +1,6 @@
 =======
 # TelegramAI
-# https://telegram-ai-xi.vercel.app/
+# [https://telegram-ai-xi.vercel.app/](https://telegram-ai-xi.vercel.app/)
 =======
 
 # React + TypeScript + Vite
