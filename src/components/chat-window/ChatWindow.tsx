@@ -108,6 +108,7 @@ export function ChatWindow({ chatId }: { chatId?: string }) {
         console.error('Failed to get response from Gemini:', error);
       } finally {
         setIsBotTyping(false);
+        setInputDisabled(false);
       }
     } else if (isHuman) { // fake reply for human chat
       setIsBotTyping(true);
@@ -126,6 +127,7 @@ export function ChatWindow({ chatId }: { chatId?: string }) {
         saveHistoryToLS(updatedBot);
         window.dispatchEvent(new Event('chatHistoryChanged'));
         setIsBotTyping(false);
+        setInputDisabled(false);
       }, 800);
     }
   };
